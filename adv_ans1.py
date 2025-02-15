@@ -19,6 +19,8 @@ def types():
 
             for itype in response['InstanceTypes']:
                 instance_types.add(itype['InstanceType'])
+            for itype in instance_types:
+                writer.writerow([region, itype])
             
 
     print("Instance types have been written to", csv_file)
